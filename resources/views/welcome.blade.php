@@ -44,7 +44,7 @@
             }
         </style>
     </head>
-    <body background="http://www.zingerbugimages.com/backgrounds/indigo_textured_rock_seamless_pattern.jpg">
+    <body background="http://wallpapersfr.com/wp-content/uploads/2015/04/1080-Full-hd-desktop-hd-wallpaper.jpg">
 
 
     <nav class="navbar navbar-default navbar-static-top">
@@ -65,7 +65,7 @@
                 </a></h4>
                 <br>
                 
-                    <h5> We manage your funds !</h5>   
+                    <h5> We value your funds !</h5>   
 
 
  
@@ -76,16 +76,15 @@
     </nav>
         <div class="container">
             <div class="content">
-                <div class="title">Eagle Financial Services</div>
-				<h1><a href="{{ action('CustomerController@index') }}">Click here to proceed</a></h1>
+                <b><div class="title">Eagle Financial Services</div></b>
+				<h1><b><a href="{{ action('CustomerController@index') }}">Click here to proceed</a></h1></b>
                  
             </div>
         </div>
         
          <footer alignment="Center"  >
-  <p><B>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Posted by: Ajay Kanagala   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
- Contact information: <a href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1#identifier">akanagala@unomaha.edu</a>.</B></p>
-</footer>
+  <p><B><font size="3" color="red">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Posted by: Saroj Verma   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+</font> </footer>
 
 
 

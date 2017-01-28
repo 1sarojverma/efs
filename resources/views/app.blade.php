@@ -19,7 +19,7 @@
    
 </head>
 
-<body id="app-layout" background="http://www.zingerbugimages.com/backgrounds/indigo_textured_rock_seamless_pattern.jpg">
+<body id="app-layout" background="http://wallpapersfr.com/wp-content/uploads/2016/07/Natural-tree-line-in-road.jpg">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,11 +33,11 @@
 
                <!-- Branding Image class="navbar-brand"  -->
                 <h4><a href="{{ url('/') }}">
-                    Eagle Financial Services-Home Page
+                    Back to Eagle Financial Services-Home Page
                 </a></h4>
 				<br>
 				
-					<h5> We manage your funds !</h5>	
+					<h5> We value your funds !</h5>	
 				
             </div>
 
