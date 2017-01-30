@@ -19,7 +19,7 @@
    
 </head>
 
-<body id="app-layout" background="http://wallpapersfr.com/wp-content/uploads/2016/07/Natural-tree-line-in-road.jpg">
+<body id="app-layout" background="https://todopsd.files.wordpress.com/2012/06/wg_blurred_backgrounds_1.jpg">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
