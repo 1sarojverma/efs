@@ -29,7 +29,7 @@
     <a href="{{ action('StockController@index') }}">Stocks</a> |
     <a href="{{ action('InvestmentController@index') }}">Investments</a>|
     <a href="{{ action('MutualfundController@index') }}">Mutualfunds</a>
-</div>                
+</div>               
 
                <!-- Branding Image class="navbar-brand"  -->
                 <h4><a href="{{ url('/') }}">
