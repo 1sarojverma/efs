@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Customer;
-
+use App\Stock;
+use App\Investment;
+use App\Mutualfund;
 class CustomerController extends Controller
 {
     public function index()
@@ -19,7 +21,11 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::findOrFail($id);
-        return view('customers.show',compact('customer'));
+		$stocks=Stock::all();
+		$investments=Investment::all();
+		$mutualfunds=Mutualfund::all();
+		
+        return view('customers.show',compact('customer','stocks','investments','mutualfunds'));
     }
 
 
@@ -43,6 +49,7 @@ class CustomerController extends Controller
     public function edit($id)
     {
         $customer=Customer::find($id);
+		
         return view('customers.edit',compact('customer'));
     }
 
@@ -70,7 +77,7 @@ class CustomerController extends Controller
     public function stringify($id)
     {
        // $customer=Customer::where('id', $id)->select('customer_id','name','address','city','state','zip','home_phone','cell_phone')->first();
-        $customer = Customer::where('cust_number', $id)->select('cust_number','name','address','city','state','zip','home_phone','cell_phone')->first();
+        $customer = Customer::where('cust_number', $id)->select('cust_number','name','address','city','state','zip','email','home_phone','cell_phone')->first();
 
         $customer = $customer->toArray();
         return response()->json($customer);

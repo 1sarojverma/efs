@@ -1,5 +1,7 @@
 @extends('app')
 @section('content')
+
+
     <h1>Customer </h1>
 
     <div class="container">
@@ -44,6 +46,143 @@
       </table>
     </div>
 
+	
+	
+<h1>Stock</h1>
+<hr>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr class="bg-info">
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Purchase price</th>
+        <th>Purchase Date</th>
+		<th>Orignal_value</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach ($stocks as $stock)
+        @if ($stock->customer_id == $customer->id)
+        <tr>
+            <td>{{ $stock->name }}</td>
+            <td>{{ $stock->symbol }}</td>
+            <td>{{ $stock->shares }}</td>
+            <td>{{ $stock->purchase_price }}</td>
+            <td>{{ $stock->purchased }}</td>
+			<td>{{$stock->purchase_price*$stock->shares}}</td>
+        </tr>
+        @endif
+    @endforeach
+
+    </tbody>
+
+</table>
+<?php $a = 0; ?>
+@foreach($stocks as $stock)
+   @if ($stock->customer_id==$customer->id)
+	   <?php $a = $a+($stock->purchase_price*$stock->shares);?>
+   @endif
+   @endforeach
+   <h4>Total of intial Stock portfolio <?php echo $a ?></h4>
+
+<h1>Investment</h1>
+	
+    <hr>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr class="bg-info">
+    
+            <th>Description</th>
+            <th>Acquired Value</th>
+            <th>Acquired Date</th>
+            <th>Recent Value</th>
+            <th>Recent Date</th>
+        
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($investments as $investment)
+		 @if ($investment->customer_id == $customer->id)
+            <tr>
+             
+                <td>{{ $investment->description }}</td>
+                <td>{{ $investment->acquired_value }}</td>
+                <td>{{ $investment->acquired_date }}</td>
+                <td>{{ $investment->recent_value }}</td>
+                <td>{{ $investment->recent_date }}</td>
+                
+            </tr>
+			@endif
+        @endforeach
+
+        </tbody>
+
+    </table>
+	<?php $a = 0; $b = 0; $c =0; ?>
+	@foreach($investments as $investment)
+	@if($investment->customer_id == $customer->id)
+
+	   <?php $a = $a+$investment->acquired_value;
+	   $b = $b+$investment->recent_value;?>
+   @endif
+   @endforeach
+   <h4>Total of Intial Investment portfolio <?php echo $a ?></h4>
+   <h4>Total of Current Investment portfolio <?php echo $b ?></h4>
+   
+   <h3>Summary_portfolio</h3>
+   <h4>Total of Intial portfolio value <?php echo $a+$b ?></h4>
+   <h4>Total of Intial Current portfolio <?php echo $a+$c ?></h4>
+		
+	
+	
+<h1>MutualFunds</h1>
+	
+    <hr>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr class="bg-info">
+    
+            <th>Mutual Fund Name</th>
+            <th>Purchase Date</th>
+            <th>Purchase Price</th>
+            <th>Current Price</th>
+            <th>Number of Shares</th>
+        
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($mutualfunds as $mutualfund)
+		 @if ($mutualfund->customer_id == $customer->id)
+            <tr>
+             
+                <td>{{ $mutualfund->name }}</td>
+                <td>{{ $mutualfund->purchase_date }}</td>
+                <td>{{ $mutualfund->purchase_price }}</td>
+                <td>{{ $mutualfund->current_price }}</td>
+                <td>{{ $mutualfund->shares }}</td>
+                
+            </tr>
+			@endif
+        @endforeach
+
+        </tbody>
+
+    </table>
+	
+		<?php $a = 0; $b = 0; $c =0; ?>
+	@foreach($mutualfunds as $mutualfund)
+	@if($mutualfund->customer_id == $customer->id)
+
+	   <?php $a = $a+$mutualfund->purchase_price;
+	   $b = $b+$mutualfund->current_price;?>
+   @endif
+   @endforeach
+   <h4>Total of Intial Purchase Price <?php echo $a ?></h4>
+   <h4>Total of Current Price <?php echo $b ?></h4>
+	
+	
+	
 @stop
 
 
